@@ -280,6 +280,12 @@ button.modal__close:hover { color: var(--white-pure); }
   margin-top: 0.5rem;
 }
 
+.portfolio__actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+}
+
 /* Responsive */
 @media (max-width: 1023px) {
   .portfolio__grid { grid-template-columns: repeat(2, 1fr); }

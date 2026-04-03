@@ -187,24 +187,35 @@ const portfolioItems = [
 // Estado del modal
 const modalState = { isOpen: false, currentItem: null };
 
+let currentLimit = Infinity;
+const MOBILE_BREAKPOINT = 767;
+
 // Elementos
-const grid        = document.getElementById('portfolio-grid');
-const filterBtns  = document.querySelectorAll('.portfolio__filter');
-const modal       = document.getElementById('portfolio-modal');
-const modalImg    = document.getElementById('modal-img');
-const modalCat    = document.getElementById('modal-cat');
-const modalTitle  = document.getElementById('modal-title');
-const modalClient = document.getElementById('modal-client');
-const modalDesc   = document.getElementById('modal-desc');
-const modalTags   = document.getElementById('modal-tags');
-const modalClose  = document.querySelector('.modal__close');
+const grid         = document.getElementById('portfolio-grid');
+const filterBtns   = document.querySelectorAll('.portfolio__filter');
+const actionsWrap  = document.getElementById('portfolio-actions');
+const loadMoreBtn  = document.getElementById('load-more-btn');
+const modal        = document.getElementById('portfolio-modal');
+const modalImg     = document.getElementById('modal-img');
+const modalCat     = document.getElementById('modal-cat');
+const modalTitle   = document.getElementById('modal-title');
+const modalClient  = document.getElementById('modal-client');
+const modalDesc    = document.getElementById('modal-desc');
+const modalTags    = document.getElementById('modal-tags');
+const modalClose   = document.querySelector('.modal__close');
 const modalOverlay = modal ? modal.querySelector('.modal__overlay') : null;
 
 // ── Render ──────────────────────────────────────────────────────
 function renderCards(items) {
   if (!grid) return;
 
-  grid.innerHTML = items.map(item => `
+  const total = items.length;
+  const isMobile = window.innerWidth <= MOBILE_BREAKPOINT;
+  
+  // Si estamos en mobile y no hemos "cargado más", limitamos a 12
+  const displayItems = items.slice(0, currentLimit);
+
+  grid.innerHTML = displayItems.map(item => `
     <div class="portfolio-item reveal reveal-up" data-category="${item.category}" data-id="${item.id}">
       <div class="portfolio-thumb">
         <img src="${item.img}" alt="${item.title}" class="portfolio-img--${item.category}" loading="lazy" onerror="this.style.backgroundColor='#1a1a1a'">
@@ -216,6 +227,15 @@ function renderCards(items) {
       </div>
     </div>
   `).join('');
+
+  // Mostrar/Ocultar botón de Cargar Más
+  if (actionsWrap) {
+    if (displayItems.length < total) {
+      actionsWrap.style.display = 'flex';
+    } else {
+      actionsWrap.style.display = 'none';
+    }
+  }
 
   // Re-inicializar reveals
   if (typeof initReveal === 'function') initReveal();
@@ -229,13 +249,35 @@ filterBtns.forEach(btn => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
 
-    const filtered = cat === 'all'
-      ? portfolioItems
-      : portfolioItems.filter(i => i.category === cat);
+    // Resetear límite al filtrar
+    if (window.innerWidth <= MOBILE_BREAKPOINT) {
+      currentLimit = 12;
+    } else {
+      currentLimit = Infinity;
+    }
 
-    renderCards(filtered);
+    updateView();
   });
 });
+
+// ── Load More ───────────────────────────────────────────────────
+if (loadMoreBtn) {
+  loadMoreBtn.addEventListener('click', () => {
+    currentLimit += 12;
+    updateView();
+  });
+}
+
+function updateView() {
+  const activeBtn = Array.from(filterBtns).find(b => b.classList.contains('active'));
+  const cat = activeBtn ? activeBtn.dataset.filter : 'all';
+  
+  const filtered = cat === 'all'
+    ? portfolioItems
+    : portfolioItems.filter(i => i.category === cat);
+
+  renderCards(filtered);
+}
 
 // ── Event delegation para cards ──────────────────────────────────
 if (grid) {
@@ -292,5 +334,10 @@ document.addEventListener('keydown', e => {
 
 // ── Init ─────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  renderCards(portfolioItems);
+  if (window.innerWidth <= MOBILE_BREAKPOINT) {
+    currentLimit = 12;
+  } else {
+    currentLimit = Infinity;
+  }
+  updateView();
 });

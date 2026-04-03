@@ -53,7 +53,7 @@
 .ticker-track {
   display: flex;
   align-items: center;
-  gap: 8rem;
+  gap: 10rem;
   width: max-content;
 }
 
@@ -65,9 +65,9 @@
 }
 
 .ticker-item img {
-  height: 120px; /* Tamaño mucho mayor para legibilidad */
+  height: 150px; /* Tamaño máximo para legibilidad total */
   width: auto;
-  max-width: 300px;
+  max-width: 350px;
   object-fit: contain;
   /* El truco para JPGs con fondo blanco: invertir para que el fondo sea negro 
      y usar screen para que el negro sea transparente */
