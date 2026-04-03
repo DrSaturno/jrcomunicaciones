@@ -81,6 +81,123 @@ const portfolioItems = [
     img: "img/portfolio/portfolio-09.jpg",
     desc: "Activación en puntos de venta clave durante temporada alta. Presencia de marca con promotoras y material POP especial.",
     tags: ["BTL", "Activación"]
+  },
+  {
+    id: 10,
+    title: "Desarrollo de Marca 01",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo1.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 11,
+    title: "Desarrollo de Marca 02",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo2.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 12,
+    title: "Desarrollo de Marca 03",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo3.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 13,
+    title: "Desarrollo de Marca 04",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo4.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 14,
+    title: "Desarrollo de Marca 05",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo5.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 15,
+    title: "Desarrollo de Marca 06",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo6.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 16,
+    title: "Desarrollo de Marca 07",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo7.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 17,
+    title: "Desarrollo de Marca 08",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo8.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 18,
+    title: "Desarrollo de Marca 09",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo9.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 19,
+    title: "Desarrollo de Marca 10",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo10.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 20,
+    title: "Desarrollo de Marca 11",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo11.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 21,
+    title: "Desarrollo de Marca 12",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo12.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 22,
+    title: "Desarrollo de Marca 13",
+    client: "Cliente Branding",
+    category: "branding",
+    img: "img/logo13.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
   }
 ];
 
