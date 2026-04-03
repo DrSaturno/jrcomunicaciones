@@ -414,13 +414,24 @@
 @media (max-width: 1023px) {
   .contacto__container { grid-template-columns: 1fr; gap: 3rem; }
   .comparacion__grid { grid-template-columns: 1fr; }
+  .testimonial__quote { font-size: 1.2rem; }
 }
 
 @media (max-width: 767px) {
-  #testimonial, #cta-central { padding: 4rem 5vw; }
+  #testimonial { padding: 3.5rem 5vw; }
+  #cta-central { padding: 4rem 5vw; }
   #contacto, #comparacion { padding: var(--section-padding-mobile); }
+
+  .testimonial__quote { font-size: 1.05rem; }
+  .testimonial__quote::before { display: none; }
+  .testimonial__author { flex-direction: column; gap: 0.5rem; text-align: center; }
+
   .contacto__form-wrap { padding: 1.5rem; }
   #contact-form { grid-template-columns: 1fr; }
   .form-group--full { grid-column: 1; }
-  .testimonial__quote::before { display: none; }
+
+  .cta-central__title { font-size: clamp(1.6rem, 8vw, 2.2rem); }
+
+  .comparacion__item { padding: 0.875rem 1.25rem; font-size: 0.82rem; }
+  .comparacion__col-header { padding: 1rem 1.25rem; }
 }

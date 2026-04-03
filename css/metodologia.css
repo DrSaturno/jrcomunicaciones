@@ -219,11 +219,21 @@
   .metodologia__intro { grid-template-columns: 1fr; gap: 2rem; }
   .metodologia__steps { grid-template-columns: 1fr; }
   .metodologia__step { padding: 2rem; }
+  .metodologia__quote { margin-top: 0; }
 }
 
 @media (max-width: 767px) {
   #metodologia { padding: var(--section-padding-mobile); }
   .metodologia__step-num { font-size: 2.5rem; }
-  .metodologia__process-circle { width: 42px; height: 42px; }
-  .metodologia__process-circle svg { width: 18px; height: 18px; }
+  .metodologia__step { padding: 1.5rem 0; }
+
+  /* Proceso visual: scroll horizontal en mobile */
+  .metodologia__process-track {
+    gap: 0;
+    padding-bottom: 1rem;
+  }
+  .metodologia__process-connector { min-width: 12px; max-width: 24px; }
+  .metodologia__process-circle { width: 40px; height: 40px; }
+  .metodologia__process-circle svg { width: 16px; height: 16px; }
+  .metodologia__process-node span { font-size: 0.58rem; }
 }

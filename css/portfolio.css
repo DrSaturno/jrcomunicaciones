@@ -284,20 +284,38 @@ button.modal__close:hover { color: var(--white-pure); }
 
 @media (max-width: 767px) {
   #portfolio { padding: var(--section-padding-mobile); }
-  .portfolio__grid { grid-template-columns: 1fr; }
-  .portfolio-item { aspect-ratio: 3/2; }
+
+  .portfolio__filters { gap: 0.4rem; }
+  .portfolio__filter { padding: 0.4rem 0.75rem; font-size: 0.72rem; }
+
+  .portfolio__grid { grid-template-columns: 1fr 1fr; gap: 1px; }
+  .portfolio-item { aspect-ratio: 1/1; }
+
+  /* Overlay siempre visible en mobile */
   .portfolio-overlay {
     opacity: 1;
-    background: linear-gradient(to top, rgba(8,13,20,0.9) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(8,13,20,0.92) 0%, transparent 60%);
   }
+
+  .portfolio-title { font-size: 0.9rem; }
+  .portfolio-btn { display: none; } /* tap en card abre modal directamente */
+
   .modal__panel {
     max-width: 100%;
-    height: 85vh;
+    height: 90vh;
     top: auto;
     bottom: 0;
     transform: translateY(100%);
     border-left: none;
     border-top: 1px solid var(--border);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
   .modal[aria-hidden="false"] .modal__panel { transform: translateY(0); }
+  .modal__body { padding: 1.5rem; }
+  .modal__title { font-size: 1.25rem; }
+}
+
+@media (max-width: 420px) {
+  .portfolio__grid { grid-template-columns: 1fr; }
+  .portfolio-item { aspect-ratio: 4/3; }
 }

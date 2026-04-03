@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Nav scrolled state ─────────────────────────────────────────
   function updateNav() {
     if (!nav) return;
-    if (window.scrollY > 60) {
+    if (window.scrollY > 10) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
