@@ -39,50 +39,73 @@
   line-height: 1.75;
 }
 
-/* Grid de logos */
-.clientes__grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1px;
-  background-color: var(--border);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
+/* Ticker de logos */
+.clientes__ticker {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
   overflow: hidden;
+  padding: 1rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
 }
 
-.cliente-logo {
-  background-color: var(--dark-2);
+.ticker-track {
+  display: flex;
+  align-items: center;
+  gap: 5rem;
+  width: max-content;
+}
+
+.ticker-item {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2rem 1.5rem;
-  min-height: 100px;
-  transition: background-color 0.25s ease;
 }
 
-.cliente-logo:hover { background-color: var(--dark-3); }
-
-.cliente-logo img {
-  max-width: 110px;
-  max-height: 45px;
-  width: 100%;
-  height: auto;
+.ticker-item img {
+  height: 40px;
+  width: auto;
+  max-width: 140px;
   object-fit: contain;
-  filter: grayscale(100%) brightness(0.4);
-  transition: filter 0.3s ease, transform 0.3s ease;
+  filter: grayscale(100%) brightness(0.5);
+  opacity: 0.4;
+  transition: all 0.4s ease;
 }
 
-.cliente-logo:hover img {
+.ticker-item:hover img {
   filter: grayscale(0%) brightness(1);
-  transform: scale(1.05);
+  opacity: 1;
+  transform: scale(1.1);
 }
 
-@media (max-width: 1023px) {
-  .clientes__grid { grid-template-columns: repeat(3, 1fr); }
+.ticker-track--left {
+  animation: scroll-left 60s linear infinite;
+}
+
+.ticker-track--right {
+  animation: scroll-right 60s linear infinite;
+}
+
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes scroll-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+/* Pausar al hover */
+.clientes__ticker:hover .ticker-track {
+  animation-play-state: paused;
 }
 
 @media (max-width: 767px) {
   #clientes { padding: var(--section-padding-mobile); }
-  .clientes__grid { grid-template-columns: repeat(2, 1fr); }
-  .cliente-logo { padding: 1.5rem 1rem; }
+  .clientes__ticker { gap: 2rem; }
+  .ticker-track { gap: 3rem; }
+  .ticker-item img { height: 30px; }
 }
