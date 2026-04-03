@@ -65,22 +65,23 @@
 }
 
 .ticker-item img {
-  height: 60px;
+  height: 85px; /* Más grandes */
   width: auto;
-  max-width: 180px;
+  max-width: 220px;
   object-fit: contain;
-  /* Hacerlos blanco puro por defecto */
-  filter: brightness(0) invert(1);
-  opacity: 0.5;
+  /* El truco para JPGs con fondo blanco: invertir para que el fondo sea negro 
+     y usar screen para que el negro sea transparente */
+  filter: invert(1) grayscale(1);
+  mix-blend-mode: screen;
+  opacity: 0.6;
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ticker-item:hover img {
-  /* Tinte celeste (cyan) en hover */
-  /* Aproximación a var(--cyan) #00c2e0 usando filtros desde blanco */
-  filter: brightness(0) invert(1) sepia(100%) saturate(5000%) hue-rotate(150deg) brightness(1.1);
   opacity: 1;
-  transform: scale(1.15);
+  transform: scale(1.1);
+  /* Tinte celeste en hover */
+  filter: invert(1) sepia(100%) saturate(500%) hue-rotate(150deg) brightness(1.2);
 }
 
 .ticker-track--left {
