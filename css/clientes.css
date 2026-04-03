@@ -53,7 +53,7 @@
 .ticker-track {
   display: flex;
   align-items: center;
-  gap: 10rem;
+  gap: 15rem; /* Más espacio para logos gigantes */
   width: max-content;
 }
 
@@ -65,9 +65,9 @@
 }
 
 .ticker-item img {
-  height: 150px; /* Tamaño máximo para legibilidad total */
+  height: 200px; /* Tamaño ultra grande para legibilidad total */
   width: auto;
-  max-width: 350px;
+  max-width: 450px;
   object-fit: contain;
   /* El truco para JPGs con fondo blanco: invertir para que el fondo sea negro 
      y usar screen para que el negro sea transparente */
@@ -109,7 +109,7 @@
 
 @media (max-width: 767px) {
   #clientes { padding: var(--section-padding-mobile); }
-  .clientes__ticker { gap: 2rem; }
-  .ticker-track { gap: 3rem; }
-  .ticker-item img { height: 30px; }
+  .clientes__ticker { gap: 3rem; }
+  .ticker-track { gap: 6rem; }
+  .ticker-item img { height: 100px; }
 }
