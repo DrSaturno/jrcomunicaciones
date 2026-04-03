@@ -1,87 +1,7 @@
 // js/portfolio.js — Filtros + Modal
 
 const portfolioItems = [
-  {
-    id: 1,
-    title: "Identidad Visual Molinos",
-    client: "Molinos Río de la Plata",
-    category: "branding",
-    img: "img/portfolio/portfolio-01.jpg",
-    desc: "Desarrollo de manual de marca completo y sistema de papelería institucional para una de las marcas líderes del mercado de consumo masivo.",
-    tags: ["Branding", "Manual de Marca", "Papelería"]
-  },
-  {
-    id: 2,
-    title: "Campaña Digital Swell",
-    client: "Swell",
-    category: "digital",
-    img: "img/portfolio/portfolio-02.jpg",
-    desc: "Campaña de comunicación digital para lanzamiento de temporada. Estrategia integral de contenidos y piezas para redes sociales.",
-    tags: ["Digital", "Campaña", "Redes Sociales"]
-  },
-  {
-    id: 3,
-    title: "Trade MKT Roman",
-    client: "Roman",
-    category: "trade",
-    img: "img/portfolio/portfolio-03.jpg",
-    desc: "Material de punto de venta y exhibidores para canal retail. Desarrollo de piezas POP para presencia en cadenas nacionales.",
-    tags: ["Trade MKT", "POP", "Exhibidores"]
-  },
-  {
-    id: 4,
-    title: "Stand Lightech Exposición",
-    client: "Lightech",
-    category: "stands",
-    img: "img/portfolio/portfolio-04.jpg",
-    desc: "Diseño y producción de stand para feria internacional de iluminación. Concepto modular con identidad de marca integrada.",
-    tags: ["Stands", "Producción", "Diseño"]
-  },
-  {
-    id: 5,
-    title: "BTL Corrientes Intensa",
-    client: "Corrientes Intensa",
-    category: "btl",
-    img: "img/portfolio/portfolio-05.jpg",
-    desc: "Acción BTL de lanzamiento de producto en puntos estratégicos de la ciudad. Activación en vía pública con degustación.",
-    tags: ["BTL", "Activación", "Lanzamiento"]
-  },
-  {
-    id: 6,
-    title: "Campaña Gráfica Bar&Drinks",
-    client: "Bar&Drinks",
-    category: "publicidad",
-    img: "img/portfolio/portfolio-06.jpg",
-    desc: "Desarrollo de campaña gráfica para medios gráficos y punto de venta. Sistema visual coherente para toda la línea de productos.",
-    tags: ["Publicidad", "Gráfica", "Campaña"]
-  },
-  {
-    id: 7,
-    title: "Identidad Puerto Madero",
-    client: "Puerto Madero",
-    category: "branding",
-    img: "img/portfolio/portfolio-07.jpg",
-    desc: "Branding institucional y sistema de señalética para complejo gastronómico. Manual de marca y aplicaciones en todos los soportes.",
-    tags: ["Branding", "Señalética"]
-  },
-  {
-    id: 8,
-    title: "E-commerce ITE Logistics",
-    client: "ITE Logistics",
-    category: "digital",
-    img: "img/portfolio/portfolio-08.jpg",
-    desc: "Plataforma digital y catálogo online para operador logístico. Diseño UX/UI orientado a la conversión y gestión de pedidos.",
-    tags: ["Digital", "E-commerce"]
-  },
-  {
-    id: 9,
-    title: "Activación Swell Temporada",
-    client: "Swell",
-    category: "btl",
-    img: "img/portfolio/portfolio-09.jpg",
-    desc: "Activación en puntos de venta clave durante temporada alta. Presencia de marca con promotoras y material POP especial.",
-    tags: ["BTL", "Activación"]
-  },
+
   {
     id: 10,
     title: "Desarrollo de Marca 01",
@@ -198,6 +118,69 @@ const portfolioItems = [
     img: "img/logo13.png",
     desc: "Diseño integral de logotipo e identidad visual corporativa.",
     tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
+    id: 23,
+    title: "Proyecto Digital 01",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web1.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
+  },
+  {
+    id: 24,
+    title: "Proyecto Digital 02",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web2.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
+  },
+  {
+    id: 25,
+    title: "Proyecto Digital 03",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web3.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
+  },
+  {
+    id: 26,
+    title: "Proyecto Digital 04",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web4.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
+  },
+  {
+    id: 27,
+    title: "Proyecto Digital 05",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web5.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
+  },
+  {
+    id: 28,
+    title: "Proyecto Digital 06",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web6.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
+  },
+  {
+    id: 29,
+    title: "Proyecto Digital 07",
+    client: "Cliente Digital",
+    category: "digital",
+    img: "img/web7.png",
+    desc: "Desarrollo web y presencia digital optimizada.",
+    tags: ["Digital", "Web", "UI/UX"]
   }
 ];
 
@@ -224,7 +207,7 @@ function renderCards(items) {
   grid.innerHTML = items.map(item => `
     <div class="portfolio-item reveal reveal-up" data-category="${item.category}" data-id="${item.id}">
       <div class="portfolio-thumb">
-        <img src="${item.img}" alt="${item.title}" loading="lazy" onerror="this.style.backgroundColor='#1a1a1a'">
+        <img src="${item.img}" alt="${item.title}" class="portfolio-img--${item.category}" loading="lazy" onerror="this.style.backgroundColor='#1a1a1a'">
         <div class="portfolio-overlay">
           <span class="portfolio-cat">${item.category}</span>
           <h3 class="portfolio-title">${item.title}</h3>

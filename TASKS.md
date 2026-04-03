@@ -137,10 +137,10 @@
 | Fase | Estado |
 |------|--------|
 | Fase 1 — Base | ✅ Completada |
-| Fase 2 — Contenido | 🔲 Pendiente |
-| Fase 3 — Portfolio | 🔲 Pendiente |
-| Fase 4 — Contacto | 🔲 Pendiente |
-| Fase 5 — Polish | 🔲 Pendiente |
+| Fase 2 — Contenido | ✅ Completada |
+| Fase 3 — Portfolio | ✅ Completada |
+| Fase 4 — Contacto | ✅ Completada |
+| Fase 5 — Polish | ✅ Completada |
 | Fase 6 — QA + Contenido | 🔲 Pendiente |
 
 ---

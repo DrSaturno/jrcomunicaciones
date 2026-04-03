@@ -56,8 +56,9 @@
 .portfolio__grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1px;
-  background-color: var(--border);
+  gap: 0;
+  border-top: 1px solid var(--border);
+  border-left: 1px solid var(--border);
 }
 
 /* Card */
@@ -68,6 +69,8 @@
   aspect-ratio: 4/3;
   cursor: pointer;
   transition: opacity 0.3s ease, transform 0.3s ease;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 
 .portfolio-item.hiding {
@@ -80,6 +83,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  background-color: var(--dark-2);
 }
 
 .portfolio-thumb img {
@@ -88,7 +92,13 @@
   object-fit: cover;
   display: block;
   transition: transform 0.5s ease;
-  background-color: var(--dark-2);
+}
+
+/* Logos y Gráfica: que se vean completos */
+.portfolio-img--branding,
+.portfolio-img--publicidad {
+  object-fit: contain !important;
+  padding: 1.5rem;
 }
 
 .portfolio-item:hover .portfolio-thumb img {
