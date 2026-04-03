@@ -94,13 +94,6 @@
   transition: transform 0.5s ease;
 }
 
-/* Logos y Gráfica: que se vean completos */
-.portfolio-img--branding,
-.portfolio-img--publicidad {
-  object-fit: contain !important;
-  padding: 1.5rem;
-}
-
 .portfolio-item:hover .portfolio-thumb img {
   transform: scale(1.05);
 }
