@@ -1,0 +1,194 @@
+/* =========================================
+   css/servicios.css — Servicios
+   ========================================= */
+
+#servicios {
+  background-color: var(--dark);
+  padding: var(--section-padding);
+  border-top: 1px solid var(--border);
+}
+
+.servicios__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.servicios__header { margin-bottom: 3.5rem; }
+
+.servicios__title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-top: 0.5rem;
+  line-height: 1.15;
+}
+
+.servicios__title-accent {
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Grid 3x2 */
+.servicios__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+/* Card */
+.servicio-card {
+  background-color: var(--dark-2);
+  transition: background-color 0.25s ease;
+}
+
+.servicio-card:hover {
+  background-color: var(--dark-3);
+}
+
+.servicio-card.open {
+  background-color: rgba(0, 194, 224, 0.04);
+}
+
+.servicio-card__header {
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  grid-template-rows: auto auto;
+  column-gap: 1rem;
+  row-gap: 0.4rem;
+  cursor: pointer;
+  align-items: center;
+}
+
+.servicio-card__icon {
+  grid-row: 1 / 3;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius);
+  background: rgba(0, 194, 224, 0.08);
+  border: 1px solid rgba(0, 194, 224, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cyan);
+  flex-shrink: 0;
+  transition: background-color 0.2s ease;
+}
+
+.servicio-card:hover .servicio-card__icon,
+.servicio-card.open .servicio-card__icon {
+  background: rgba(0, 194, 224, 0.14);
+}
+
+.servicio-card__title {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  letter-spacing: 0.08em;
+  line-height: 1;
+  grid-column: 2;
+}
+
+.servicio-card__sub {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray);
+  grid-column: 2;
+}
+
+.servicio-card__toggle {
+  grid-row: 1 / 3;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--border-2);
+  border-radius: 50%;
+  color: var(--gray);
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.3s ease, background-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.servicio-card.open .servicio-card__toggle {
+  transform: rotate(45deg);
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background-color: rgba(0,194,224,0.08);
+}
+
+/* Borde top cyan al hacer hover */
+.servicio-card__header {
+  border-top: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.servicio-card:hover .servicio-card__header,
+.servicio-card.open .servicio-card__header {
+  border-top-color: var(--cyan);
+}
+
+/* Lista acordeón */
+.servicio-card__list {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.servicio-card.open .servicio-card__list {
+  max-height: 300px;
+}
+
+.servicio-card__list ul {
+  margin: 0 2rem;
+  padding: 1rem 0 1.75rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.servicio-card__list li {
+  font-size: 0.83rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  padding: 0.45rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: color 0.15s ease;
+}
+
+.servicio-card__list li:last-child { border-bottom: none; }
+
+.servicio-card__list li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
+.servicio-card__list li:hover { color: var(--white-pure); }
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .servicios__grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 767px) {
+  #servicios { padding: var(--section-padding-mobile); }
+  .servicios__grid { grid-template-columns: 1fr; }
+  .servicio-card__header { padding: 1.5rem; }
+}

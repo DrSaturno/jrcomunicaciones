@@ -1,0 +1,303 @@
+/* =========================================
+   css/portfolio.css — Portfolio + Modal
+   ========================================= */
+
+#portfolio {
+  background-color: var(--black);
+  padding: var(--section-padding);
+  border-top: 1px solid var(--border);
+}
+
+.portfolio__container { max-width: 1400px; margin: 0 auto; }
+
+.portfolio__header { margin-bottom: 2.5rem; }
+
+.portfolio__title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-top: 0.5rem;
+}
+
+/* Filtros */
+.portfolio__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio__filter {
+  padding: 0.45rem 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--gray);
+  border: 1px solid var(--border-2);
+  border-radius: 100px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.portfolio__filter:hover {
+  border-color: var(--cyan);
+  color: var(--cyan);
+}
+
+.portfolio__filter.active {
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  border-color: transparent;
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Grid */
+.portfolio__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background-color: var(--border);
+}
+
+/* Card */
+.portfolio-item {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--dark);
+  aspect-ratio: 4/3;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.portfolio-item.hiding {
+  opacity: 0;
+  transform: scale(0.97);
+  pointer-events: none;
+}
+
+.portfolio-thumb {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.portfolio-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  background-color: var(--dark-2);
+}
+
+.portfolio-item:hover .portfolio-thumb img {
+  transform: scale(1.05);
+}
+
+/* Overlay */
+.portfolio-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(8,13,20,0.95) 0%, rgba(8,13,20,0.3) 50%, transparent 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay { opacity: 1; }
+
+.portfolio-cat {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 0.35rem;
+}
+
+.portfolio-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+.portfolio-btn {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--black);
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  border: none;
+  padding: 0.4rem 0.875rem;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  align-self: flex-start;
+}
+
+.portfolio-btn:hover { opacity: 0.85; }
+
+/* === MODAL === */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal[aria-hidden="false"] {
+  visibility: visible;
+  pointer-events: all;
+}
+
+.modal__overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(8,13,20,0.88);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  cursor: pointer;
+}
+
+.modal[aria-hidden="false"] .modal__overlay { opacity: 1; }
+
+.modal__panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 540px;
+  height: 100%;
+  background-color: var(--dark);
+  border-left: 1px solid var(--border);
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal[aria-hidden="false"] .modal__panel { transform: translateX(0); }
+
+button.modal__close {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  padding: 1rem 1.25rem;
+  background-color: var(--dark-2);
+  z-index: 1;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.4rem;
+  color: var(--gray);
+  display: flex;
+  justify-content: flex-end;
+  border-radius: 0;
+  transition: color 0.2s ease;
+}
+
+button.modal__close:hover { color: var(--white-pure); }
+
+.modal__content { display: flex; flex-direction: column; }
+
+.modal__img-wrap {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  background-color: var(--dark-2);
+}
+
+.modal__img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.modal__cat {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--black);
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  padding: 0.25rem 0.75rem;
+  border-radius: 100px;
+  align-self: flex-start;
+}
+
+.modal__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  line-height: 1.2;
+  margin-top: 0.25rem;
+}
+
+.modal__client-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-top: 0.5rem;
+}
+
+.modal__client {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.modal__desc {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  line-height: 1.75;
+  margin-top: 0.5rem;
+}
+
+.modal__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .portfolio__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 767px) {
+  #portfolio { padding: var(--section-padding-mobile); }
+  .portfolio__grid { grid-template-columns: 1fr; }
+  .portfolio-item { aspect-ratio: 3/2; }
+  .portfolio-overlay {
+    opacity: 1;
+    background: linear-gradient(to top, rgba(8,13,20,0.9) 0%, transparent 60%);
+  }
+  .modal__panel {
+    max-width: 100%;
+    height: 85vh;
+    top: auto;
+    bottom: 0;
+    transform: translateY(100%);
+    border-left: none;
+    border-top: 1px solid var(--border);
+  }
+  .modal[aria-hidden="false"] .modal__panel { transform: translateY(0); }
+}

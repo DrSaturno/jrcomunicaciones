@@ -1,0 +1,229 @@
+/* =========================================
+   css/metodologia.css — Metodología
+   Estilo: flowchart + pasos numerados
+   ========================================= */
+
+#metodologia {
+  background-color: var(--black);
+  padding: var(--section-padding);
+  border-top: 1px solid var(--border);
+}
+
+.metodologia__container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Intro 2 columnas */
+.metodologia__intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4.5rem;
+  align-items: start;
+}
+
+.metodologia__title {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 700;
+  color: var(--white-pure);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.metodologia__text {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--gray-light);
+  line-height: 1.8;
+  margin-top: 0.75rem;
+}
+
+/* Quote */
+.metodologia__quote {
+  border-left: 2px solid var(--cyan);
+  padding-left: 1.75rem;
+  margin-top: 2rem;
+  background-color: rgba(0,194,224,0.03);
+  padding: 1.5rem 1.75rem;
+  border-radius: 0 var(--radius) var(--radius) 0;
+}
+
+.metodologia__quote em {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(232,244,248,0.75);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* Grid 3 pasos */
+.metodologia__steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px;
+  background-color: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 4.5rem;
+}
+
+.metodologia__step {
+  background-color: var(--dark);
+  padding: 2.5rem 2rem;
+  transition: background-color 0.2s ease;
+}
+
+.metodologia__step:hover {
+  background-color: var(--dark-2);
+}
+
+.metodologia__step-num {
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: 3.5rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 1.25rem;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  opacity: 0.35;
+}
+
+.metodologia__step-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  line-height: 1.2;
+  margin-bottom: 0.875rem;
+}
+
+.metodologia__step-title span {
+  font-style: italic;
+  background: linear-gradient(135deg, var(--cyan), var(--blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.metodologia__step-text {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.75;
+}
+
+/* Proceso visual */
+.metodologia__process {
+  border-top: 1px solid var(--border);
+  padding-top: 4rem;
+}
+
+.metodologia__process-label {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gray);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.metodologia__process-label::before {
+  content: '';
+  width: 16px;
+  height: 1px;
+  background-color: var(--border-2);
+}
+
+.metodologia__process-track {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow-x: auto;
+  padding-bottom: 0.5rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.metodologia__process-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  cursor: default;
+}
+
+.metodologia__process-node span {
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.metodologia__process-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gray);
+  background-color: var(--dark);
+  transition: border-color 0.25s ease, color 0.25s ease, background-color 0.25s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.metodologia__process-node:hover .metodologia__process-circle {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background-color: rgba(0,194,224,0.06);
+}
+
+.metodologia__process-node:hover span { color: var(--white); }
+
+.metodologia__process-node--highlight .metodologia__process-circle {
+  border-color: var(--cyan);
+  color: var(--cyan);
+  background: linear-gradient(135deg, rgba(0,194,224,0.1), rgba(26,111,255,0.1));
+}
+
+.metodologia__process-node--highlight span {
+  color: var(--cyan);
+  font-weight: 600;
+}
+
+.metodologia__process-connector {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-2), var(--border));
+  min-width: 16px;
+  max-width: 80px;
+}
+
+/* Responsive */
+@media (max-width: 1023px) {
+  .metodologia__intro { grid-template-columns: 1fr; gap: 2rem; }
+  .metodologia__steps { grid-template-columns: 1fr; }
+  .metodologia__step { padding: 2rem; }
+}
+
+@media (max-width: 767px) {
+  #metodologia { padding: var(--section-padding-mobile); }
+  .metodologia__step-num { font-size: 2.5rem; }
+  .metodologia__process-circle { width: 42px; height: 42px; }
+  .metodologia__process-circle svg { width: 18px; height: 18px; }
+}
