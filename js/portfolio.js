@@ -120,6 +120,15 @@ const portfolioItems = [
     tags: ["Branding", "Logo", "Identidad"]
   },
   {
+    id: 30,
+    title: "Casamar",
+    client: "Casamar",
+    category: "branding",
+    img: "img/casamar.png",
+    desc: "Diseño integral de logotipo e identidad visual corporativa.",
+    tags: ["Branding", "Logo", "Identidad"]
+  },
+  {
     id: 23,
     title: "Proyecto Digital 01",
     client: "Cliente Digital",
