@@ -206,6 +206,17 @@ p { line-height: 1.7; }
   color: var(--cyan);
 }
 
+.btn--outline {
+  background-color: transparent;
+  color: var(--cyan);
+  border: 1px solid var(--cyan);
+}
+
+.btn--outline:hover {
+  background-color: var(--cyan);
+  color: var(--black);
+}
+
 .btn--full { width: 100%; }
 
 /* ── Highlight en títulos ────────────────────────────────────────── */
