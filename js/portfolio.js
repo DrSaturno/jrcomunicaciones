@@ -1,195 +1,68 @@
 // js/portfolio.js — Filtros + Modal
 
 const portfolioItems = [
-
   {
     id: 30,
     title: "Casamar",
     client: "Casamar",
-    category: "branding",
+    category: "all",
     img: "img/casamar.png",
     desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
+    tags: []
   },
   {
-    id: 10,
-    title: "Desarrollo de Marca 01",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo1.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
+    id: 31,
+    title: "Gobierno de la Ciudad de Buenos Aires",
+    client: "Gobierno de la Ciudad de Buenos Aires",
+    category: "all",
+    img: "img/gobierno de la ciudad de buenos aires.png",
+    desc: "Campaña de comunicación institucional para el Gobierno de la Ciudad de Buenos Aires.",
+    tags: []
   },
   {
-    id: 11,
-    title: "Desarrollo de Marca 02",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo2.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
+    id: 32,
+    title: "Sub Secretaria de Deportes de la Ciudad",
+    client: "Sub Secretaria de Deportes de la Ciudad",
+    category: "all",
+    img: "img/sub secretaria de deportes de la ciudad.png",
+    desc: "Campaña de comunicación institucional para la Sub Secretaria de Deportes de la Ciudad.",
+    tags: []
   },
   {
-    id: 12,
-    title: "Desarrollo de Marca 03",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo3.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
+    id: 33,
+    title: "Consejo de la Magistratura",
+    client: "Consejo de la Magistratura",
+    category: "all",
+    img: "img/consejo de la magistratura.png",
+    desc: "Campaña de comunicación institucional para el Consejo de la Magistratura.",
+    tags: []
   },
   {
-    id: 13,
-    title: "Desarrollo de Marca 04",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo4.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
+    id: 34,
+    title: "Pan American Energy",
+    client: "Pan American Energy",
+    category: "all",
+    img: "img/pan american energy.png",
+    desc: "Campaña de comunicación corporativa para Pan American Energy.",
+    tags: []
   },
   {
-    id: 14,
-    title: "Desarrollo de Marca 05",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo5.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
+    id: 35,
+    title: "AUSA Autopistas Urbanas",
+    client: "AUSA Autopistas Urbanas",
+    category: "all",
+    img: "img/ausa autopistas urbanas.png",
+    desc: "Campaña de comunicación institucional para AUSA Autopistas Urbanas.",
+    tags: []
   },
   {
-    id: 15,
-    title: "Desarrollo de Marca 06",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo6.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 16,
-    title: "Desarrollo de Marca 07",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo7.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 17,
-    title: "Desarrollo de Marca 08",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo8.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 18,
-    title: "Desarrollo de Marca 09",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo9.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 19,
-    title: "Desarrollo de Marca 10",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo10.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 20,
-    title: "Desarrollo de Marca 11",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo11.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 21,
-    title: "Desarrollo de Marca 12",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo12.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 22,
-    title: "Desarrollo de Marca 13",
-    client: "Cliente Branding",
-    category: "branding",
-    img: "img/logo13.png",
-    desc: "Diseño integral de logotipo e identidad visual corporativa.",
-    tags: ["Branding", "Logo", "Identidad"]
-  },
-  {
-    id: 23,
-    title: "Proyecto Digital 01",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web1.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
-  },
-  {
-    id: 24,
-    title: "Proyecto Digital 02",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web2.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
-  },
-  {
-    id: 25,
-    title: "Proyecto Digital 03",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web3.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
-  },
-  {
-    id: 26,
-    title: "Proyecto Digital 04",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web4.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
-  },
-  {
-    id: 27,
-    title: "Proyecto Digital 05",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web5.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
-  },
-  {
-    id: 28,
-    title: "Proyecto Digital 06",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web6.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
-  },
-  {
-    id: 29,
-    title: "Proyecto Digital 07",
-    client: "Cliente Digital",
-    category: "digital",
-    img: "img/web7.png",
-    desc: "Desarrollo web y presencia digital optimizada.",
-    tags: ["Digital", "Web", "UI/UX"]
+    id: 36,
+    title: "Ministerio de Movilidad e Infraestructura",
+    client: "Ministerio de Movilidad e Infraestructura",
+    category: "all",
+    img: "img/ministerio de movilidad e infre estructura.png",
+    desc: "Campaña de comunicación institucional para el Ministerio de Movilidad e Infraestructura.",
+    tags: []
   }
 ];
 
@@ -229,7 +102,6 @@ function renderCards(items) {
       <div class="portfolio-thumb">
         <img src="${item.img}" alt="${item.title}" class="portfolio-img--${item.category}" loading="lazy" onerror="this.style.backgroundColor='#1a1a1a'">
         <div class="portfolio-overlay">
-          <span class="portfolio-cat">${item.category}</span>
           <h3 class="portfolio-title">${item.title}</h3>
           <button class="portfolio-btn" data-id="${item.id}">Ver Proyecto →</button>
         </div>

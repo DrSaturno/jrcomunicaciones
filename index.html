@@ -434,15 +434,9 @@
           <h2 class="portfolio__title">Portfolio</h2>
         </div>
 
-        <!-- Filtros -->
-        <div class="portfolio__filters reveal reveal-up">
+        <!-- Filtros (ocultos por ahora) -->
+        <div class="portfolio__filters reveal reveal-up" style="display:none">
           <button class="portfolio__filter active" data-filter="all">Todos</button>
-          <button class="portfolio__filter" data-filter="branding">Branding</button>
-          <button class="portfolio__filter" data-filter="digital">Digital</button>
-          <button class="portfolio__filter" data-filter="publicidad">Publicidad</button>
-          <button class="portfolio__filter" data-filter="trade">Trade MKT</button>
-          <button class="portfolio__filter" data-filter="btl">BTL</button>
-          <button class="portfolio__filter" data-filter="stands">Stands</button>
         </div>
 
         <!-- Grid de cards (renderizado por JS) -->
@@ -656,7 +650,7 @@
 
         <!-- Columna derecha — formulario -->
         <div class="contacto__form-wrap reveal reveal-right">
-          <form id="contact-form" action="https://formspree.io/f/TU_ID_ACA" method="POST" novalidate>
+          <form id="contact-form" action="https://formsubmit.co/ajax/info@jrcomunicaciones.com.ar" method="POST" novalidate>
             <div class="form-group">
               <label for="nombre">Nombre *</label>
               <input type="text" id="nombre" name="nombre" required placeholder="Su nombre completo">
